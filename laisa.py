@@ -34,8 +34,7 @@ df = df[df['state'] == state]
 
 fig = px.line(df, x="date", y=column, title=column + ' - ' + state)
 fig.update_layout( xaxis_title='Data', yaxis_title=column.upper(), title = {'x':0.5})
-colors = px.colors.qualitative.swatches()
-colors.show()
+color_discrete_sequence=px.colors.qualitative.red
 
 st.title('DADOS COVID - BRASIL')
 st.write('Nessa aplicação, o usuário tem a opção de escolher o estado e o tipo de informação para mostrar o gráfico. Utilize o menu lateral para alterar a INFORMAÇÃO.')
