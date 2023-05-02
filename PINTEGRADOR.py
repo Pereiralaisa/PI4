@@ -32,7 +32,7 @@ column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 df = df[df['state'] == state]
 
 fig = px.line(df, x="date", y=column, title=column + ' - ' + state)
-fig.update_layout( xaxis_title='Data', yaxis_title=column.upper(), title = {'x':0.9})
+fig.update_layout( xaxis_title='Data', yaxis_title=column.upper(), title = {'x':0.5})
 
 st.title('DADOS COVID-19')
 st.write('Nessa aplicação, o usuário tem a opção de escolher o estado e o tipo de informação para mostrar o gráfico. Utilize o menu lateral para alterar a mostragem.')
