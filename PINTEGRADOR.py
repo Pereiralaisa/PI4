@@ -39,4 +39,4 @@ st.write('Nessa aplicação, o usuário tem a opção de escolher o estado e o t
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.caption('Os dados foram obtidos a partir do site: https://github.com/wcota/covid19br')
+st.caption('Projeto desenvolvido por alunos UNIVESP,PROJETO INTEGRADOR IV')
