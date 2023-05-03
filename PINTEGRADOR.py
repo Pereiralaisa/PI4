@@ -13,24 +13,24 @@ import streamlit as st
 
 #streamlit run codigoBase.py
 
-#LENDO O DATASET
+
 df = pd.read_csv('https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv')
 
-#MELHORANDO O NOME DAS COLUNAS DA TABELA
+
 df = df.rename(columns={'totalCases': 'Número acumulado de casos','newCases': 'Novos casos','deaths': 'Número acumulado de óbitos','newDeaths': 'Novos óbitos','vaccinated': 'Vacinas aplicadas - primeira dose','vaccinated_second': 'Vacinas aplicadas - segunda dose','vaccinated_single': 'Vacinas aplicadas - dose única','tests': 'Testes Realizados'})
 
-#SELECÃO DO ESTADO
+
 state  = 'SP'
 estados = list(df['state'].unique())
 #estados = list(df['SP'].unique())
 #state = st.sidebar.selectbox('ESTADO', SP)
 
-#SELEÇÃO DA COLUNA
-#column ='Casos por 100 mil habitantes'
+
+
 colunas = ['Número acumulado de casos','Novos casos','Número acumulado de óbitos','Novos óbitos','Vacinas aplicadas - primeira dose','Vacinas aplicadas - segunda dose','Vacinas aplicadas - dose única','Testes Realizados',]
 column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 
-#SELEÇÃO DAS LINHAS QUE PERTECEM AO ESTADO 
+
 df = df[df['state'] == state]
 
 fig = px.line(df, x="date", y=column, title=column + ' - ' + state)
