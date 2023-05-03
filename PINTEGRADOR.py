@@ -17,7 +17,7 @@ import streamlit as st
 df = pd.read_csv('https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv')
 
 #MELHORANDO O NOME DAS COLUNAS DA TABELA
-df = df.rename(columns={'newDeaths': 'Novos óbitos','newCases': 'Novos casos','vaccinated': 'Vacinas aplicadas - primeira dose','vaccinated_second': 'Vacinas aplicadas - segunda dose','vaccinated_single': 'Vacinas aplicadas - dose única','tests': 'Testes Realizados','tests_per_100k_inhabitants': ' Testes por 100 mil Habitantes',})
+df = df.rename(columns={'totaCases': 'Número acumulado de casos','newCases': 'Novos casos','deaths': 'Número acumulado de óbitos','newDeaths': 'Novos óbitos','vaccinated': 'Vacinas aplicadas - primeira dose','vaccinated_second': 'Vacinas aplicadas - segunda dose','vaccinated_single': 'Vacinas aplicadas - dose única','tests': 'Testes Realizados'})
 
 #SELECÃO DO ESTADO
 state  = 'SP'
@@ -27,7 +27,7 @@ estados = list(df['state'].unique())
 
 #SELEÇÃO DA COLUNA
 #column ='Casos por 100 mil habitantes'
-colunas = ['Novos óbitos','Novos casos','Vacinas aplicadas - primeira dose','Vacinas aplicadas - segunda dose','Vacinas aplicadas - dose única','Testes Realizados',' Testes por 100 mil Habitantes']
+colunas = ['Número acumulado de casos','Novos casos','Número acumulado de óbitos','Novos óbitos','Vacinas aplicadas - primeira dose','Vacinas aplicadas - segunda dose','Vacinas aplicadas - dose única','Testes Realizados',]
 column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 
 #SELEÇÃO DAS LINHAS QUE PERTECEM AO ESTADO 
