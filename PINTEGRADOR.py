@@ -27,7 +27,7 @@ estados = list(df['state'].unique())
 
 #SELEÇÃO DA COLUNA
 #column ='Casos por 100 mil habitantes'
-colunas = ['Novos óbitos','Novos casos','Vacinas aplicadas - primeira dose',,'Vacinas aplicadas - segunda dose','Vacinas aplicadas - dose única','Testes Realizados',' Testes por 100 mil Habitantes']
+colunas = ['Novos óbitos','Novos casos','Vacinas aplicadas - primeira dose','Vacinas aplicadas - segunda dose','Vacinas aplicadas - dose única','Testes Realizados',' Testes por 100 mil Habitantes']
 column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 
 #SELEÇÃO DAS LINHAS QUE PERTECEM AO ESTADO 
