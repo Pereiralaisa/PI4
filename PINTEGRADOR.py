@@ -17,7 +17,7 @@ import streamlit as st
 df = pd.read_csv('https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv')
 
 #MELHORANDO O NOME DAS COLUNAS DA TABELA
-df = df.rename(columns={'newDeaths': 'Novos óbitos','newCases': 'Novos casos','vaccinated': 'Vacinas aplicadas primeira dose','vaccinated_second': 'Vacinas aplicadas segunda dose','tests': 'Testes Realizados','tests_per_100k_inhabitants': ' Testes por 100 mil Habitantes',})
+df = df.rename(columns={'newDeaths': 'Novos óbitos','newCases': 'Novos casos','vaccinated': 'Vacinas aplicadas - primeira dose','vaccinate_single': 'Vacinas aplicadas - dose única','vaccinated_second': 'Vacinas aplicadas - segunda dose','tests': 'Testes Realizados','tests_per_100k_inhabitants': ' Testes por 100 mil Habitantes',})
 
 #SELECÃO DO ESTADO
 state  = 'SP'
@@ -27,7 +27,7 @@ estados = list(df['state'].unique())
 
 #SELEÇÃO DA COLUNA
 #column ='Casos por 100 mil habitantes'
-colunas = ['Novos óbitos','Novos casos','Vacinas aplicadas primeira dose','Vacinas aplicadas segunda dose','Testes Realizados',' Testes por 100 mil Habitantes']
+colunas = ['Novos óbitos','Novos casos','Vacinas aplicadas - primeira dose','Vacinas aplicadas - dose única','Vacinas aplicadas - segunda dose','Testes Realizados',' Testes por 100 mil Habitantes']
 column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 
 #SELEÇÃO DAS LINHAS QUE PERTECEM AO ESTADO 
