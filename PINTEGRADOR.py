@@ -21,8 +21,6 @@ df = df.rename(columns={'totalCases': 'Número acumulado de casos','newCases': '
 
 state  = 'SP'
 estados = list(df['state'].unique())
-#estados = list(df['SP'].unique())
-#state = st.sidebar.selectbox('ESTADO', SP)
 
 
 
